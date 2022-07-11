@@ -9,13 +9,13 @@ superGra.then((response) => {
     }
     return response.json()
 }, (error)=> {
-    console.log(response.ok)
+    console.error(error)
     statusCheck.textContent = "coś się popsuło i nie było mnie słychać"
 }).then((body)=>{
     console.log(body)
     const superMonke = body
 
-    for (let key in superMonke) {
+    for (const key in superMonke) {
        const objKey = document.createElement("p")
        objKey.id = `${key}`
        objKey.textContent = `${key}: ${superMonke[key]}`
