@@ -1,13 +1,21 @@
 @keyframes newMsgFlash{
-    from {background-color: blueviolet;}
-    to {background-color: aliceblue}
+    from {background-color: var(--primaryColor);}
+    to {background-color:var(--secondaryColor)}
 }
-@font-face {
-    font-family: Inter;
-    src: url(/fonts/static/Inter-Regular.ttf) format('trueType');
+
+:root{
+    --primaryColor: blueviolet;
+    --secondaryColor: #E4DCEF;
+    --thirdColor: black;
+    --userColor0: #1943cc; 
+    --userColor1: #C9224C;
+    --userColor2: #037905;
+    --userColor3: #B54708;
+    --userColor4: #907914;
+    --userColor5: #8C1288;
 }
 body{
-    font-family: 'Inter-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
     width: 100vw;
     height: 100vh;
     margin: 0px;
@@ -19,7 +27,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blueviolet;
+    background-color: var(--primaryColor);
     margin: 0px;
     padding: 0px;
 }
@@ -34,18 +42,14 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
+    background-color: var(--secondaryColor);
 }
 .chatWindow{
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    gap:5px;
-    
-
-    
-    
+    gap:5px;  
     overflow-x: auto;
 }
 form{
@@ -57,10 +61,10 @@ form{
 }
 input{
     width: 100%;
-    font-family: 'Inter-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
     
-    background-color: aliceblue;
-    border: 2px solid blueviolet;
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--primaryColor);
     border-radius: 5px 0px 0px 5px;
 
 }
@@ -70,10 +74,10 @@ input:focus {
     outline: none;
 }
 button{
-    font-family: 'Inter-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
     color: blueviolet;
-    background-color: aliceblue;
-    border: 2px solid blueviolet;
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--primaryColor);
     border-left: none;
     border-radius: 0px 5px 5px 0px;
 }
@@ -86,5 +90,11 @@ button{
 }
 .msgStyle{
     margin: 1px 5px 1px 5px;
-    font-family: 'Inter-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
+}
+.msgIsYours{
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color: var(--primaryColor);
+    font-weight: 700;
+    
 }

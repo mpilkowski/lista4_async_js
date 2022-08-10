@@ -8,32 +8,57 @@ const chatWindow = document.getElementById("chatWindowMain")
 const chatFrame = document.getElementById('chatFrame')
 const msgInput = document.getElementById("msgInput")
 
+let userColors = {}
+let colorCounter = 1
+
 function newMessage(serverEvent){
-    const newMsg = document.createElement("p")
-    
+    const newMsgAuthor = document.createElement("span")
+    const newMsgContent = document.createElement("span")
+    const newMsg = document.createElement('div')
 
-    const msg = JSON.parse(serverEvent.data)
+    const serverMsgData = JSON.parse(serverEvent.data)
     //console.log(msg)
-    //console.log(`${msg.author}: ${msg.message}`)
+    //console.log(`${msg.author}: ${msg.message}`)    
 
     
+    newMsgAuthor.textContent = serverMsgData.author + ":"
+    newMsgAuthor.classList.add('msgStyle')
+    
+    if (serverMsgData.author === 'szczenaTheMonke'){
+        newMsgAuthor.classList.add('msgIsYours')
+    }
 
-    const author = msg.author
-    const message = msg.message
-    newMsg.textContent = msg.author+ ": "+ msg.message
-    newMsg.classList.add('msgStyle')
+    newMsgContent.textContent =serverMsgData.message   
+    newMsgContent.classList.add('msgStyle')    
+    
+    userColor(serverMsgData)
+    newMsgAuthor.style.setProperty('color', `var(--userColor${userColors[`${serverMsgData.author}`]})`)
+    newMsg.appendChild(newMsgAuthor)
+    newMsg.appendChild(newMsgContent)
     newMsg.classList.add('newMsg')
 
     chatWindow.appendChild(newMsg)
     newMsg.scrollIntoView()
     cleanUpChat()
-    isMsgYours()
+    
+    
+}
+function userColor(msg){
+    
+    if (!userColors[`${msg.author}`]){
+    userColors[`${msg.author}`] = colorCounter
+    colorCounter += 1
+    }
+
+    if (colorCounter > 6){
+        colorCounter = 0
+    }    
 }
 
 function cleanUpChat(){
     const chatWindowLength = chatWindow.childNodes.length
 
-    if(chatWindowLength >= 30){
+    if(chatWindowLength >= 50){
         chatWindow.removeChild(chatWindow.firstChild)
     }
 }
