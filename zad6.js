@@ -30,8 +30,6 @@ function newMessage(serverEvent){
     isMsgYours()
 }
 
-function isMsgYours()
-
 function cleanUpChat(){
     const chatWindowLength = chatWindow.childNodes.length
 
@@ -42,9 +40,7 @@ function cleanUpChat(){
 
 
 chatFrame.addEventListener('submit', (event)=>{
-    event.preventDefault()
-
-    
+    event.preventDefault()   
     
     const userMsg ={
         author: 'You',
