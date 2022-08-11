@@ -83,7 +83,10 @@ button{
 }
 
 /* wodotryski do wiadomosci */
-.newMsg{    
+.newMsg{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;    
     animation-name: newMsgFlash;
     animation-duration: 1s;
     animation-fill-mode: both; 
