@@ -19,6 +19,7 @@ body{
     width: 100vw;
     height: 100vh;
     margin: 0px;
+    
 }
 .container{
     width: 100vw;
@@ -27,7 +28,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--primaryColor);
+    background: var(--primaryColor) url("https://static2.lolwallpapers.net/2015/01/IceTobogganCorki.jpg") no-repeat fixed center;    
     margin: 0px;
     padding: 0px;
 }
