@@ -1,4 +1,4 @@
-#Exercises for ansychronous JavaScript
+# Exercises for ansychronous JavaScript
 
 Repository holds all results for my asynchronous JS exercises this includes
 
