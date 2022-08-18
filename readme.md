@@ -1,6 +1,6 @@
 # Exercises for ansychronous JavaScript
 
-Repository holds all results for my asynchronous JS exercises this includes
+Repository holds all results of my asynchronous JS exercises this includes
 
 - fetching data
 - fetch task _using raider.io API on local HTML_
