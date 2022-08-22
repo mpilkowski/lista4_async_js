@@ -1,0 +1,104 @@
+@keyframes newMsgFlash{
+    from {background-color: var(--primaryColor);}
+    to {background-color:var(--secondaryColor)}
+}
+
+:root{
+    --primaryColor: blueviolet;
+    --secondaryColor: #E4DCEF;
+    --thirdColor: black;
+    --userColor0: #1943cc; 
+    --userColor1: #C9224C;
+    --userColor2: #037905;
+    --userColor3: #B54708;
+    --userColor4: #907914;
+    --userColor5: #8C1288;
+}
+body{
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--primaryColor) url("https://static2.lolwallpapers.net/2015/01/IceTobogganCorki.jpg") no-repeat fixed center;    
+    margin: 0px;
+    padding: 0px;
+}
+.chatBox{
+    display: flex;
+    height: 80%;    
+    width: 40%;
+    min-width: 300px;
+    
+    box-shadow: 2px 1px 1px rgb(0, 0, 0);
+    border-radius: 0px 0px 5px 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+}
+.chatWindow{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap:5px;  
+    overflow-x: auto;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+input{
+    width: 100%;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--primaryColor);
+    border-radius: 5px 0px 0px 5px;
+
+}
+input:focus {    
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+button{
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color: blueviolet;
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--primaryColor);
+    border-left: none;
+    border-radius: 0px 5px 5px 0px;
+}
+
+/* wodotryski do wiadomosci */
+.newMsg{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;    
+    animation-name: newMsgFlash;
+    animation-duration: 1s;
+    animation-fill-mode: both; 
+}
+.msgStyle{
+    margin: 1px 5px 1px 5px;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
+}
+.msgIsYours{
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color: var(--primaryColor);
+    font-weight: 700;
+    
+}
